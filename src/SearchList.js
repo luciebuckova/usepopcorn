@@ -1,10 +1,14 @@
 import SearchListItem from './SearchListItem';
 
-export default function SearchList({ movies }) {
+export default function SearchList({ movies, onSelectMovie }) {
   return (
-    <ul className="list">
+    <ul className="list list-movies">
       {movies?.map((movie) => (
-        <SearchListItem key={movie.imdbID} movie={movie} />
+        <SearchListItem
+          key={movie.imdbID}
+          movie={movie}
+          onSelectMovie={onSelectMovie}
+        />
       ))}
     </ul>
   );
